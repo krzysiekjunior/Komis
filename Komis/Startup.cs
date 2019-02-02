@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Komis.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Komis
@@ -15,7 +11,8 @@ namespace Komis
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)  //w tej metodzie rejestruje się usługi 
         {                                                           //framework'u które potrzebujemy i własne usługi
-            services.AddMvc();
+            services.AddTransient<ISamochodRepository, MockSamochodRepository>();
+            services.AddMvc();                                      //i tu mamy dostęp do kontenra wstrzykiwania zależności ASP.NET Core
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
