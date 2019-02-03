@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="~/content/site.css" rel="stylesheet"/>
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container body-content">
+        <div class="row">
+            @RenderBody()          /*  tu będą wstawione dane wyjściowe z widoku Index.cshtml */
+        </div>
+    </div>
+</body>
+</html>
